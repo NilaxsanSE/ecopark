@@ -10,6 +10,7 @@ import {
   Database,
   Info,
   Landmark,
+  Languages,
   Mail,
   Phone,
   PhoneCall,
@@ -19,7 +20,9 @@ import {
   Zap,
 } from "lucide-react";
 
-import headerVideo from "../Header/header.mp4";
+import headerVideo from "../Header/header-loop.mp4";
+import logoFull from "../Header/logo.png";
+import logoMark from "../Header/logo1.png";
 import showcaseOne from "../Header/1.jpg";
 import showcaseTwo from "../Header/2.jpg";
 import showcaseThree from "../Header/3.jpg";
@@ -32,6 +35,8 @@ import renewableImage from "../Header/Erneuerbare Energien.jpg";
 import storageImage from "../Header/Speicherkraftwerke.jpg";
 import balancingImage from "../Header/Bilanzkreise.jpg";
 import dataCenterImage from "../Header/Data-Center .jpg";
+
+const HERO_VIDEO_SRC = headerVideo;
 
 const projects = [
   {
@@ -172,6 +177,223 @@ const categories = [
   { value: 6, prefix: "+", label: "Countries" },
 ];
 
+const localizedContent = {
+  EN: {
+    portfolioLinks,
+    partnerLinks,
+    aboutLinks: ["Company", "Contact", "Imprint", "Privacy Policy"],
+    navLabels: { portfolio: "Portfolio", partner: "Partner", about: "About" },
+    categories,
+    projects,
+    showcaseItems,
+    steps,
+    hero: {
+      title: "WE INVEST IN",
+      accent: " THE FUTURE",
+      text: "We support high-quality projects, always at the side of our customers and partners!",
+    },
+    intro: {
+      kicker: "One step ahead",
+      title: "Why we are better",
+      text: "We are a leading global investment company that invests on behalf of institutions and private individuals around the world. Our success is based on our proven investment and operational expertise - and at the heart of it all is the ECO-PARK management system. The insights we gain from our scale, expertise, and global reach enable every group within ECO-Park to benefit from being part of the whole.",
+    },
+    showcaseHeading: {
+      kicker: "Company showcase",
+      title: "Built around proven investment and operational expertise.",
+    },
+    servicesHeading: {
+      kicker: "DISCOVER WHAT WE DO BETTER",
+      title: "Working with ECO-Park means becoming part of a results-oriented team.",
+      label: "Projects",
+    },
+    team: { kicker: "Our", title: "TEAM", more: "MORE" },
+    approach: {
+      kicker: "3 steps to success",
+      title: "We support you along the way",
+      text: "We accompany you with every question throughout the process",
+      learnMore: "Learn more",
+    },
+    contact: {
+      kicker: "Contact",
+      title: "International presence",
+      text: "Established international offices enable us to invest where attractive opportunities arise. Our local presence in important locations around the world gives us knowledge of local market conditions and trends. This enables rapid scaling to put our investment ideas into action.",
+      company: "ECO-PARK Management AG - Switzerland",
+      country: "Switzerland",
+    },
+    form: {
+      name: "Full Name",
+      email: "Email",
+      phone: "Phone",
+      subject: "Subject",
+      message: "Tell Us More",
+      send: "Send",
+    },
+    footer: {
+      portfolio: "PORTFOLIO",
+      partner: "PARTNER",
+      about: "ABOUT",
+      rights: "© 2025 All rights reserved",
+    },
+  },
+  DE: {
+    portfolioLinks: [
+      "Erneuerbare Energien",
+      "Batteriespeicherkraftwerke",
+      "Bilanzkreise",
+      "Rechenzentren",
+    ],
+    partnerLinks: ["WUMM", "Excello Batteriespeicherkraftwerke", "IKEM"],
+    aboutLinks: ["Unternehmen", "Kontakt", "Impressum", "Datenschutz"],
+    navLabels: { portfolio: "Portfolio", partner: "Partner", about: "Über uns" },
+    categories: [
+      { value: 130, prefix: "+", label: "Projekte" },
+      { value: 75, prefix: "+", label: "Kunden" },
+      { value: 7, prefix: "", label: "Partner" },
+      { value: 6, prefix: "+", label: "Länder" },
+    ],
+    projects: [
+      {
+        icon: Sprout,
+        image: renewableImage,
+        title: "Erneuerbare Energien",
+        text: "Nachhaltiger Weg zur CO2-Neutralität",
+      },
+      {
+        icon: Zap,
+        image: storageImage,
+        title: "Speicherkraftwerke",
+        text: "Industrielle Energielösungen",
+      },
+      {
+        icon: ShieldCheck,
+        image: balancingImage,
+        title: "Bilanzkreise",
+        text: "Fundament der Energiewirtschaft",
+      },
+      {
+        icon: Database,
+        image: dataCenterImage,
+        title: "Rechenzentren",
+        text: "Rechenzentrumsinfrastruktur auf höchstem Niveau",
+      },
+    ],
+    showcaseItems: [
+      {
+        image: showcaseOne,
+        variant: "wide tall",
+        title: "Investmentexpertise",
+        text: "Bewährte operative Kompetenz für hochwertige Projekte.",
+      },
+      {
+        image: showcaseTwo,
+        variant: "compact",
+        title: "Globale Perspektive",
+        text: "Größe, Expertise und globale Reichweite für jede Gruppe.",
+      },
+      {
+        image: showcaseThree,
+        variant: "compact",
+        title: "Schweizer Management",
+        text: "Ein klares Managementsystem im Herzen des Unternehmens.",
+      },
+      {
+        image: showcaseFour,
+        variant: "wide",
+        title: "Operative Exzellenz",
+        text: "Strukturierte Expertise für widerstandsfähige Umsetzung.",
+      },
+      {
+        image: showcaseFive,
+        variant: "compact",
+        title: "Langfristiger Fokus",
+        text: "Ausgerichtet auf nachhaltige Wertschöpfung.",
+      },
+      {
+        image: showcaseSix,
+        variant: "compact",
+        title: "Partnernetzwerk",
+        text: "Verlässliche Zusammenarbeit in wichtigen Märkten.",
+      },
+      {
+        image: showcaseSeven,
+        variant: "tall",
+        title: "Zukunftsprojekte",
+        text: "Hochwertige Chancen mit klarer Ausrichtung.",
+      },
+      {
+        image: showcaseEight,
+        variant: "compact",
+        title: "ECO-PARK System",
+        text: "Ein Managementsystem im Zentrum jedes Projekts.",
+      },
+    ],
+    steps: [
+      {
+        number: "01",
+        title: "Möglichkeiten erkunden",
+        text: "Wir präsentieren alle Möglichkeiten für Ihr Projekt.",
+      },
+      {
+        number: "02",
+        title: "Die ideale Lösung wählen",
+        text: "Bewerten Sie unsere Risiko- und Rentabilitätsanalyse und treffen Sie Ihre Entscheidung!",
+      },
+      {
+        number: "03",
+        title: "Gewünschte Projekte umsetzen",
+        text: "Bringen Sie Ihr Projekt in die Umsetzung!",
+      },
+    ],
+    hero: {
+      title: "WIR INVESTIEREN IN",
+      accent: " DIE ZUKUNFT",
+      text: "Wir unterstützen hochwertige Projekte und stehen unseren Kunden und Partnern jederzeit zur Seite!",
+    },
+    intro: {
+      kicker: "Einen Schritt voraus",
+      title: "Warum wir besser sind",
+      text: "Wir sind eine führende globale Investmentgesellschaft, die im Auftrag von Institutionen und Privatpersonen weltweit investiert. Unser Erfolg basiert auf unserer bewährten Investment- und operativen Expertise - und im Zentrum steht das ECO-PARK Managementsystem. Die Erkenntnisse aus unserer Größe, Expertise und globalen Reichweite ermöglichen jeder Gruppe innerhalb von ECO-Park, vom Ganzen zu profitieren.",
+    },
+    showcaseHeading: {
+      kicker: "Unternehmensprofil",
+      title: "Auf bewährter Investment- und operativer Expertise aufgebaut.",
+    },
+    servicesHeading: {
+      kicker: "ENTDECKEN SIE, WAS WIR BESSER MACHEN",
+      title: "Mit ECO-Park zu arbeiten bedeutet, Teil eines ergebnisorientierten Teams zu werden.",
+      label: "Projekte",
+    },
+    team: { kicker: "Unser", title: "TEAM", more: "MEHR" },
+    approach: {
+      kicker: "3 Schritte zum Erfolg",
+      title: "Wir begleiten Sie auf dem Weg",
+      text: "Wir begleiten Sie bei jeder Frage während des gesamten Prozesses",
+      learnMore: "Mehr erfahren",
+    },
+    contact: {
+      kicker: "Kontakt",
+      title: "Internationale Präsenz",
+      text: "Etablierte internationale Standorte ermöglichen es uns, dort zu investieren, wo attraktive Chancen entstehen. Unsere lokale Präsenz an wichtigen Standorten weltweit gibt uns Wissen über lokale Marktbedingungen und Trends. Dies ermöglicht eine schnelle Skalierung, um unsere Investmentideen umzusetzen.",
+      company: "ECO-PARK Management AG - Schweiz",
+      country: "Schweiz",
+    },
+    form: {
+      name: "Vollständiger Name",
+      email: "E-Mail",
+      phone: "Telefon",
+      subject: "Betreff",
+      message: "Erzählen Sie uns mehr",
+      send: "Senden",
+    },
+    footer: {
+      portfolio: "PORTFOLIO",
+      partner: "PARTNER",
+      about: "ÜBER UNS",
+      rights: "© 2025 Alle Rechte vorbehalten",
+    },
+  },
+};
+
 gsap.registerPlugin(ScrollTrigger);
 
 function AnimatedNumber({ value, prefix = "" }) {
@@ -229,9 +451,142 @@ function useSmoothScroll() {
   }, []);
 }
 
+const HeroVideo = React.memo(function HeroVideo() {
+  const firstVideoRef = useRef(null);
+  const secondVideoRef = useRef(null);
+  const activeIndexRef = useRef(0);
+  const frameRef = useRef();
+  const transitionTimeoutRef = useRef();
+  const isTransitioningRef = useRef(false);
+
+  useEffect(() => {
+    const videos = [firstVideoRef.current, secondVideoRef.current];
+    const crossfadeLeadTime = 1.6;
+    const crossfadeDuration = 1500;
+
+    const resetVideo = (video) => {
+      if (!video) return;
+      video.pause();
+      video.currentTime = 0;
+    };
+
+    const startTransition = () => {
+      if (isTransitioningRef.current) return;
+
+      const activeIndex = activeIndexRef.current;
+      const nextIndex = activeIndex === 0 ? 1 : 0;
+      const activeVideo = videos[activeIndex];
+      const nextVideo = videos[nextIndex];
+
+      if (!activeVideo || !nextVideo) return;
+
+      isTransitioningRef.current = true;
+      nextVideo.currentTime = 0;
+      nextVideo
+        .play()
+        .then(() => {
+          nextVideo.classList.add("is-active");
+          activeVideo.classList.remove("is-active");
+
+          transitionTimeoutRef.current = window.setTimeout(() => {
+            resetVideo(activeVideo);
+            activeIndexRef.current = nextIndex;
+            isTransitioningRef.current = false;
+          }, crossfadeDuration);
+        })
+        .catch(() => {
+          activeVideo.classList.add("is-active");
+          nextVideo.classList.remove("is-active");
+          isTransitioningRef.current = false;
+        });
+    };
+
+    const monitorPlayback = () => {
+      const activeVideo = videos[activeIndexRef.current];
+
+      if (
+        activeVideo?.duration &&
+        activeVideo.currentTime >= activeVideo.duration - crossfadeLeadTime
+      ) {
+        startTransition();
+      }
+
+      frameRef.current = requestAnimationFrame(monitorPlayback);
+    };
+
+    firstVideoRef.current?.play().catch(() => {});
+    frameRef.current = requestAnimationFrame(monitorPlayback);
+
+    return () => {
+      cancelAnimationFrame(frameRef.current);
+      window.clearTimeout(transitionTimeoutRef.current);
+      videos.forEach((video) => video?.pause());
+    };
+  }, []);
+
+  return (
+    <div className="hero-video-wrap" aria-hidden="true">
+      <video
+        ref={firstVideoRef}
+        className="hero-video is-active"
+        src={HERO_VIDEO_SRC}
+        autoPlay
+        muted
+        playsInline
+        preload="auto"
+      />
+      <video
+        ref={secondVideoRef}
+        className="hero-video"
+        src={HERO_VIDEO_SRC}
+        muted
+        playsInline
+        preload="auto"
+      />
+    </div>
+  );
+});
+
 function App() {
   useSmoothScroll();
   const serviceTrackRef = useRef(null);
+  const [isNavScrolled, setIsNavScrolled] = useState(false);
+  const [activeLanguage, setActiveLanguage] = useState("DE");
+  const t = localizedContent[activeLanguage];
+  const navGroups = [
+    {
+      label: t.navLabels.portfolio,
+      items: t.portfolioLinks.map((item) => ({ label: item, href: "#portfolio" })),
+    },
+    {
+      label: t.navLabels.partner,
+      items: t.partnerLinks.map((item) => ({ label: item, href: "#partners" })),
+    },
+    {
+      label: t.navLabels.about,
+      items: t.aboutLinks.map((item) => ({
+        label: item,
+        href: item === t.aboutLinks[0] ? "#company" : "#contact",
+      })),
+    },
+  ];
+
+  useEffect(() => {
+    const updateNavState = () => {
+      setIsNavScrolled(window.scrollY > 12);
+    };
+
+    updateNavState();
+    window.addEventListener("scroll", updateNavState, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", updateNavState);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = activeLanguage === "DE" ? "de" : "en";
+  }, [activeLanguage]);
 
   useEffect(() => {
     let removeSliderListeners = () => {};
@@ -334,21 +689,12 @@ function App() {
           duration: 0.85,
         })
         .from(
-          ".hero-video",
-          {
-            autoAlpha: 0,
-            scale: 1.08,
-            duration: 1.4,
-          },
-          0
-        )
-        .from(
           ".hero-overlay",
           {
             autoAlpha: 0,
             duration: 1.1,
           },
-          "<0.12"
+          0
         )
         .from(
           ".hero .eyebrow",
@@ -423,15 +769,11 @@ function App() {
 
   return (
     <div className="site-shell">
-      <header className="topbar">
-        <a className="brand" href="#home" aria-label="ECO-PARK home">
-          <span className="brand-mark">EP</span>
-          <span>
-            <strong>ECO-PARK</strong>
-            <small>Management AG</small>
-          </span>
+      <header className={`topbar${isNavScrolled ? " is-scrolled" : ""}`}>
+        <a className="brand brand-overlay" href="#home" aria-label="ECO-PARK home">
+          <img className="navbar-logo" src={logoFull} alt="ECO-PARK Management AG" />
         </a>
-        <nav className="nav-links" aria-label="Primary navigation">
+        <nav className="nav-links" aria-label={activeLanguage === "DE" ? "Hauptnavigation" : "Primary navigation"}>
           {navGroups.map((group) => (
             <div className="nav-item" key={group.label}>
               <button className="nav-trigger" type="button">
@@ -447,34 +789,38 @@ function App() {
               </div>
             </div>
           ))}
+          <div className="language-switch" aria-label={activeLanguage === "DE" ? "Sprachauswahl" : "Language switcher"}>
+            <Languages size={16} />
+            {["EN", "DE"].map((language) => (
+              <button
+                className={activeLanguage === language ? "is-active" : ""}
+                type="button"
+                key={language}
+                aria-pressed={activeLanguage === language}
+                onClick={() => setActiveLanguage(language)}
+              >
+                {language}
+              </button>
+            ))}
+          </div>
         </nav>
       </header>
 
-      <aside className="fixed-rail" aria-label="Quick actions">
-        <a href="#company" aria-label="Company information">
+      <aside className="fixed-rail" aria-label={activeLanguage === "DE" ? "Schnellzugriff" : "Quick actions"}>
+        <a href="#company" aria-label={activeLanguage === "DE" ? "Unternehmensinformationen" : "Company information"}>
           <Info size={22} />
         </a>
-        <a href="#partners" aria-label="Team and partners">
+        <a href="#partners" aria-label={activeLanguage === "DE" ? "Team und Partner" : "Team and partners"}>
           <UserRound size={22} />
         </a>
-        <a href="#contact" aria-label="Contact ECO-PARK">
+        <a href="#contact" aria-label={activeLanguage === "DE" ? "ECO-PARK kontaktieren" : "Contact ECO-PARK"}>
           <PhoneCall size={22} />
         </a>
       </aside>
 
       <main id="home">
         <section className="hero">
-          <div className="hero-video-wrap" aria-hidden="true">
-            <video
-              className="hero-video"
-              src={headerVideo}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-            />
-          </div>
+          <HeroVideo />
           <div className="hero-overlay" />
           <div className="hero-content">
             <div className="eyebrow">
@@ -482,18 +828,15 @@ function App() {
               ECO-PARK Management AG
             </div>
             <h1>
-              WE INVEST IN
-              <span> THE FUTURE</span>
+              {t.hero.title}
+              <span>{t.hero.accent}</span>
             </h1>
-            <p>
-              We support high-quality projects, always at the side of our
-              customers and partners!
-            </p>
+            <p>{t.hero.text}</p>
           </div>
         </section>
 
-        <section className="category-band" aria-label="ECO-PARK categories">
-          {categories.map((item) => (
+        <section className="category-band" aria-label={activeLanguage === "DE" ? "ECO-PARK Kategorien" : "ECO-PARK categories"}>
+          {t.categories.map((item) => (
             <div className="category-item" key={item.label}>
               <AnimatedNumber value={item.value} prefix={item.prefix} />
               <span>{item.label}</span>
@@ -503,26 +846,19 @@ function App() {
 
         <section className="intro-section" id="company">
           <div>
-            <span className="section-kicker">One step ahead</span>
-            <h2>Why we are better</h2>
+            <span className="section-kicker">{t.intro.kicker}</span>
+            <h2>{t.intro.title}</h2>
           </div>
-          <p>
-            We are a leading global investment company that invests on behalf of
-            institutions and private individuals around the world. Our success
-            is based on our proven investment and operational expertise - and at
-            the heart of it all is the ECO-PARK management system. The insights
-            we gain from our scale, expertise, and global reach enable every
-            group within ECO-Park to benefit from being part of the whole.
-          </p>
+          <p>{t.intro.text}</p>
         </section>
 
         <section className="company-showcase-section" id="showcase">
           <div className="section-heading">
-            <span className="section-kicker">Company showcase</span>
-            <h2>Built around proven investment and operational expertise.</h2>
+            <span className="section-kicker">{t.showcaseHeading.kicker}</span>
+            <h2>{t.showcaseHeading.title}</h2>
           </div>
           <div className="showcase-grid">
-            {showcaseItems.map((item) => (
+            {t.showcaseItems.map((item) => (
               <article className={`showcase-card ${item.variant}`} key={item.title}>
                 <img src={item.image} alt="" />
                 <div>
@@ -537,21 +873,18 @@ function App() {
         <section className="services-section" id="portfolio">
           <div className="section-heading">
             <span className="section-kicker">
-              DISCOVER WHAT WE DO BETTER
+              {t.servicesHeading.kicker}
             </span>
-            <h2>
-              Working with ECO-Park means becoming part of a results-oriented
-              team.
-            </h2>
-            <p className="projects-label">Projects</p>
+            <h2>{t.servicesHeading.title}</h2>
+            <p className="projects-label">{t.servicesHeading.label}</p>
           </div>
           <div className="service-slider">
             <div className="service-track" ref={serviceTrackRef}>
-              {[...projects, ...projects].map(({ icon: Icon, image, title, text }, index) => (
+              {[...t.projects, ...t.projects].map(({ icon: Icon, image, title, text }, index) => (
                 <article
                   className="service-card"
                   key={`${title}-${index}`}
-                  aria-hidden={index >= projects.length}
+                  aria-hidden={index >= t.projects.length}
                 >
                   <div className="service-card-media" aria-hidden="true">
                     <img src={image} alt="" />
@@ -569,8 +902,8 @@ function App() {
 
         <section className="team-section" id="partners">
           <div className="section-heading">
-            <span className="section-kicker">Our</span>
-            <h2>TEAM</h2>
+            <span className="section-kicker">{t.team.kicker}</span>
+            <h2>{t.team.title}</h2>
           </div>
           <div className="team-grid">
             {team.map((member) => (
@@ -584,19 +917,17 @@ function App() {
             ))}
           </div>
           <a className="inline-more" href="#contact">
-            MORE <ArrowRight size={22} />
+            {t.team.more} <ArrowRight size={22} />
           </a>
         </section>
 
         <section className="approach-section" id="process">
           <div className="approach-copy">
-            <span className="section-kicker">3 steps to success</span>
-            <h2>We support you along the way</h2>
-            <p>
-              We accompany you with every question throughout the process
-            </p>
+            <span className="section-kicker">{t.approach.kicker}</span>
+            <h2>{t.approach.title}</h2>
+            <p>{t.approach.text}</p>
             <div className="pillars">
-              {portfolioLinks.map((item) => (
+              {t.portfolioLinks.map((item) => (
                 <span key={item}>
                   <Check size={16} />
                   {item}
@@ -607,9 +938,9 @@ function App() {
           <div className="process-panel">
             <div className="panel-topline">
               <BarChart3 size={22} />
-              Learn more
+              {t.approach.learnMore}
             </div>
-            {steps.map((step) => (
+            {t.steps.map((step) => (
               <div className="process-step" key={step.number}>
                 <strong>{step.number}</strong>
                 <span>
@@ -623,25 +954,19 @@ function App() {
 
         <section className="contact-section" id="contact">
           <div className="contact-copy">
-            <span className="section-kicker">Contact</span>
-            <h2>International presence</h2>
-            <p>
-              Established international offices enable us to invest where
-              attractive opportunities arise. Our local presence in important
-              locations around the world gives us knowledge of local market
-              conditions and trends. This enables rapid scaling to put our
-              investment ideas into action.
-            </p>
+            <span className="section-kicker">{t.contact.kicker}</span>
+            <h2>{t.contact.title}</h2>
+            <p>{t.contact.text}</p>
             <address>
               <Building2 size={22} />
               <span>
-                ECO-PARK Management AG - Switzerland
+                {t.contact.company}
                 <br />
                 Weinbergstr. 8
                 <br />
                 CH-8807 Freienbach
                 <br />
-                Switzerland
+                {t.contact.country}
               </span>
             </address>
             <div className="contact-lines">
@@ -657,53 +982,65 @@ function App() {
           </div>
           <form className="contact-form">
             <label>
-              Full Name
+              {t.form.name}
               <input type="text" name="name" />
             </label>
             <label>
-              Email
+              {t.form.email}
               <input type="email" name="email" />
             </label>
             <label>
-              Phone
+              {t.form.phone}
               <input type="tel" name="phone" />
             </label>
             <label>
-              Subject
+              {t.form.subject}
               <input type="text" name="subject" />
             </label>
             <label>
-              Tell Us More
+              {t.form.message}
               <textarea name="message" rows="5" />
             </label>
-            <button type="button">
-              Send <ArrowRight size={18} />
-            </button>
+            <button type="button">{t.form.send}</button>
           </form>
         </section>
       </main>
 
       <footer className="footer">
         <div className="footer-brand">
-          <span className="footer-logo">EP</span>
+          <span className="footer-logo">
+            <img src={logoMark} alt="" />
+          </span>
           <div>
             <strong>ECO-PARK</strong>
             <span>Management AG</span>
           </div>
         </div>
         <div>
-          <strong>Portfolio</strong>
-          <span>{portfolioLinks.join(" | ")}</span>
+          <strong>{t.footer.portfolio}</strong>
+          <ul className="footer-list">
+            {t.portfolioLinks.map((link) => (
+              <li key={link}>{link}</li>
+            ))}
+          </ul>
         </div>
         <div>
-          <strong>PARTNER</strong>
-          <span>{partnerLinks.join(" | ")}</span>
+          <strong>{t.footer.partner}</strong>
+          <ul className="footer-list">
+            {t.partnerLinks.map((link) => (
+              <li key={link}>{link}</li>
+            ))}
+          </ul>
         </div>
         <div>
-          <strong>ABOUT</strong>
-          <span>Company | Contact | Imprint|Privacy Policy</span>
+          <strong>{t.footer.about}</strong>
+          <ul className="footer-list">
+            {t.aboutLinks.map((link) => (
+              <li key={link}>{link}</li>
+            ))}
+          </ul>
         </div>
-        <p>© 2025 All rights reserved</p>
+        <p>{t.footer.rights}</p>
       </footer>
     </div>
   );
