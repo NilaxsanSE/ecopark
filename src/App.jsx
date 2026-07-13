@@ -195,7 +195,7 @@ const localizedContent = {
     intro: {
       kicker: "One step ahead",
       title: "Why we are better",
-      text: "We are a leading global investment company that invests on behalf of institutions and private individuals around the world. Our success is based on our proven investment and operational expertise - and at the heart of it all is the ECO-PARK management system. The insights we gain from our scale, expertise, and global reach enable every group within ECO-Park to benefit from being part of the whole.",
+      text: "We are a leading global investment company that invests on behalf of institutions and private individuals around the world. Our success is based on our proven investment and operational expertise - and at the heart of it all is the ECO-PARK management system. The insights we gain from our scale, expertise, and global reach enable every group within ECO-PARK to benefit from being part of the whole.",
     },
     showcaseHeading: {
       kicker: "Company showcase",
@@ -203,7 +203,7 @@ const localizedContent = {
     },
     servicesHeading: {
       kicker: "DISCOVER WHAT WE DO BETTER",
-      title: "Working with ECO-Park means becoming part of a results-oriented team.",
+      title: "Working with ECO-PARK means becoming part of a results-oriented team.",
       label: "Projects",
     },
     team: { kicker: "Our", title: "TEAM", more: "MORE" },
@@ -239,7 +239,7 @@ const localizedContent = {
     portfolioLinks: [
       "Erneuerbare Energien",
       "Batteriespeicherkraftwerke",
-      "Bilanzkreise",
+      "Ausgleichsenergie",
       "Rechenzentren",
     ],
     partnerLinks: ["WUMM", "Excello Batteriespeicherkraftwerke", "IKEM"],
@@ -267,8 +267,8 @@ const localizedContent = {
       {
         icon: ShieldCheck,
         image: balancingImage,
-        title: "Bilanzkreise",
-        text: "Fundament der Energiewirtschaft",
+        title: "Ausgleichsenergie",
+        text: "Basis einer stabilen Energiewirtschaft",
       },
       {
         icon: Database,
@@ -281,50 +281,50 @@ const localizedContent = {
       {
         image: showcaseOne,
         variant: "wide tall",
-        title: "Investmentexpertise",
-        text: "Bewährte operative Kompetenz für hochwertige Projekte.",
+        title: "Anlagekompetenz",
+        text: "Langjährige Erfahrung und fundiertes Wissen für erstklassige Investitionen.",
       },
       {
         image: showcaseTwo,
         variant: "compact",
-        title: "Globale Perspektive",
-        text: "Größe, Expertise und globale Reichweite für jede Gruppe.",
+        title: "Globale Stärke",
+        text: "Internationale Reichweite und umfassendes Fachwissen für jeden unserer Bereiche.",
       },
       {
         image: showcaseThree,
         variant: "compact",
         title: "Schweizer Management",
-        text: "Ein klares Managementsystem im Herzen des Unternehmens.",
+        text: "Das ECO-PARK-System als verlässliches Herzstück unseres gesamten Handelns.",
       },
       {
         image: showcaseFour,
         variant: "wide",
         title: "Operative Exzellenz",
-        text: "Strukturierte Expertise für widerstandsfähige Umsetzung.",
+        text: "Strukturierte und sichere Abläufe für die erfolgreiche Umsetzung vor Ort.",
       },
       {
         image: showcaseFive,
         variant: "compact",
         title: "Langfristiger Fokus",
-        text: "Ausgerichtet auf nachhaltige Wertschöpfung.",
+        text: "Gezielte Ausrichtung auf nachhaltige und beständige Wertschöpfung.",
       },
       {
         image: showcaseSix,
         variant: "compact",
         title: "Partnernetzwerk",
-        text: "Verlässliche Zusammenarbeit in wichtigen Märkten.",
+        text: "Verlässliche und gewinnbringende Zusammenarbeit in allen wichtigen Märkten.",
       },
       {
         image: showcaseSeven,
         variant: "tall",
         title: "Zukunftsprojekte",
-        text: "Hochwertige Chancen mit klarer Ausrichtung.",
+        text: "Hochwertige Chancen durch klare strategische Ausrichtung.",
       },
       {
         image: showcaseEight,
         variant: "compact",
-        title: "ECO-PARK System",
-        text: "Ein Managementsystem im Zentrum jedes Projekts.",
+        title: "ECO-PARK-Standard",
+        text: "Unsere bewährte Methode als Fundament für jedes einzelne Projekt.",
       },
     ],
     steps: [
@@ -352,15 +352,15 @@ const localizedContent = {
     intro: {
       kicker: "Einen Schritt voraus",
       title: "Warum wir besser sind",
-      text: "Wir sind eine führende globale Investmentgesellschaft, die im Auftrag von Institutionen und Privatpersonen weltweit investiert. Unser Erfolg basiert auf unserer bewährten Investment- und operativen Expertise - und im Zentrum steht das ECO-PARK Managementsystem. Die Erkenntnisse aus unserer Größe, Expertise und globalen Reichweite ermöglichen jeder Gruppe innerhalb von ECO-Park, vom Ganzen zu profitieren.",
+      text: "Wir sind eine führende globale Investmentgesellschaft, die im Auftrag von Institutionen und Privatpersonen weltweit investiert. Unser Erfolg basiert auf unserer bewährten Investment- und operativen Expertise - und im Zentrum steht das ECO-PARK Managementsystem. Die Erkenntnisse aus unserer Größe, Expertise und globalen Reichweite ermöglichen jeder Gruppe innerhalb von ECO-PARK, vom Ganzen zu profitieren.",
     },
     showcaseHeading: {
       kicker: "Unternehmensprofil",
-      title: "Auf bewährter Investment- und operativer Expertise aufgebaut.",
+      title: "Gebaut auf bewährter Anlagekompetenz und exzellentem Management.",
     },
     servicesHeading: {
       kicker: "ENTDECKEN SIE, WAS WIR BESSER MACHEN",
-      title: "Mit ECO-Park zu arbeiten bedeutet, Teil eines ergebnisorientierten Teams zu werden.",
+      title: "Mit ECO-PARK zu arbeiten bedeutet, Teil eines ergebnisorientierten Teams zu werden.",
       label: "Projekte",
     },
     team: { kicker: "Unser", title: "TEAM", more: "MEHR" },

@@ -531,7 +531,6 @@ textarea {
     transform: translateY(0) scale(1);
   }
 }
-
 @keyframes categoryItemIn {
   from {
     opacity: 0;
@@ -589,6 +588,19 @@ textarea {
 .contact-copy h2 {
   margin-top: 0.8rem;
   font-size: clamp(2.1rem, 4vw, 3.5rem);
+}
+
+.company-showcase-section .section-heading,
+.services-section .section-heading {
+  max-width: min(980px, 100%);
+}
+
+.company-showcase-section .section-heading h2,
+.services-section .section-heading h2 {
+  max-width: 30ch;
+  margin-inline: auto;
+  font-size: clamp(1.9rem, 2.8vw, 3rem);
+  line-height: 1.08;
 }
 
 .intro-section p,
@@ -688,7 +700,7 @@ textarea {
 
 .showcase-card h3 {
   margin: 0 0 0.45rem;
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-size: clamp(1.25rem, 1vw, 1.75rem);
 }
 
 .showcase-card p {
