@@ -12,12 +12,14 @@ import {
   Landmark,
   Languages,
   Mail,
+  Menu,
   Phone,
   PhoneCall,
   ShieldCheck,
   Sprout,
   UserRound,
   Zap,
+  X,
 } from "lucide-react";
 
 import headerVideo from "../Header/header-loop.mp4";
@@ -552,6 +554,7 @@ function App() {
   const serviceTrackRef = useRef(null);
   const [isNavScrolled, setIsNavScrolled] = useState(false);
   const [activeLanguage, setActiveLanguage] = useState("DE");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const t = localizedContent[activeLanguage];
   const navGroups = [
     {
@@ -587,6 +590,20 @@ function App() {
   useEffect(() => {
     document.documentElement.lang = activeLanguage === "DE" ? "de" : "en";
   }, [activeLanguage]);
+
+  useEffect(() => {
+    const closeMobileMenu = () => {
+      if (window.innerWidth > 980) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", closeMobileMenu);
+
+    return () => {
+      window.removeEventListener("resize", closeMobileMenu);
+    };
+  }, []);
 
   useEffect(() => {
     let removeSliderListeners = () => {};
@@ -769,10 +786,19 @@ function App() {
 
   return (
     <div className="site-shell">
-      <header className={`topbar${isNavScrolled ? " is-scrolled" : ""}`}>
+      <header className={`topbar${isNavScrolled ? " is-scrolled" : ""}${isMobileMenuOpen ? " is-menu-open" : ""}`}>
         <a className="brand brand-overlay" href="#home" aria-label="ECO-PARK home">
           <img className="navbar-logo" src={logoFull} alt="ECO-PARK Management AG" />
         </a>
+        <button
+          className="mobile-menu-toggle"
+          type="button"
+          aria-label={isMobileMenuOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={isMobileMenuOpen}
+          onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
+        >
+          {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
         <nav className="nav-links" aria-label={activeLanguage === "DE" ? "Hauptnavigation" : "Primary navigation"}>
           {navGroups.map((group) => (
             <div className="nav-item" key={group.label}>
@@ -782,7 +808,7 @@ function App() {
               </button>
               <div className="nav-menu">
                 {group.items.map((item) => (
-                  <a href={item.href} key={item.label}>
+                  <a href={item.href} key={item.label} onClick={() => setIsMobileMenuOpen(false)}>
                     {item.label}
                   </a>
                 ))}
@@ -797,7 +823,10 @@ function App() {
                 type="button"
                 key={language}
                 aria-pressed={activeLanguage === language}
-                onClick={() => setActiveLanguage(language)}
+                onClick={() => {
+                  setActiveLanguage(language);
+                  setIsMobileMenuOpen(false);
+                }}
               >
                 {language}
               </button>

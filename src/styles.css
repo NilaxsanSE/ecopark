@@ -140,6 +140,34 @@ textarea {
   font-size: 1rem;
 }
 
+.mobile-menu-toggle {
+  display: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  color: #ffffff;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04)),
+    rgba(4, 28, 52, 0.38);
+  box-shadow: 0 14px 34px rgba(3, 18, 31, 0.18);
+  backdrop-filter: blur(16px);
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.mobile-menu-toggle:hover {
+  border-color: rgba(199, 150, 62, 0.54);
+  background:
+    linear-gradient(135deg, rgba(199, 150, 62, 0.24), rgba(255, 255, 255, 0.06)),
+    rgba(4, 28, 52, 0.5);
+  transform: translateY(-1px);
+}
+
 .nav-item {
   position: relative;
 }
@@ -582,6 +610,10 @@ textarea {
   align-items: start;
 }
 
+.intro-section > div {
+  text-align: center;
+}
+
 .intro-section h2,
 .section-heading h2,
 .approach-copy h2,
@@ -597,6 +629,13 @@ textarea {
 
 .company-showcase-section .section-heading h2,
 .services-section .section-heading h2 {
+  max-width: 30ch;
+  margin-inline: auto;
+  font-size: clamp(1.9rem, 2.8vw, 3rem);
+  line-height: 1.08;
+}
+
+.intro-section h2 {
   max-width: 30ch;
   margin-inline: auto;
   font-size: clamp(1.9rem, 2.8vw, 3rem);
@@ -1424,12 +1463,111 @@ address svg {
   color: rgba(255, 255, 255, 0.66);
 }
 
+@media (max-width: 1360px) {
+  .brand {
+    width: clamp(8.5rem, 14vw, 12rem);
+    max-width: clamp(8.5rem, 14vw, 12rem);
+  }
+
+  .navbar-logo {
+    width: clamp(8rem, 13vw, 11.25rem);
+    transform: translateY(0) scale(1.08);
+  }
+
+  .footer {
+    grid-template-columns: minmax(20rem, 1.35fr) repeat(3, minmax(11rem, 1fr));
+    column-gap: clamp(2.25rem, 4vw, 4rem);
+  }
+
+  .footer > p {
+    grid-column: 1 / -1;
+    justify-self: end;
+    padding-top: 0;
+  }
+}
+
 @media (max-width: 980px) {
   .topbar {
-    position: absolute;
+    position: fixed;
+    justify-content: flex-end;
+    padding: 0.85rem 1rem;
+  }
+
+  .mobile-menu-toggle {
+    position: relative;
+    z-index: 22;
+    display: grid;
   }
 
   .nav-links {
+    position: absolute;
+    top: calc(100% + 0.65rem);
+    right: 1rem;
+    z-index: 21;
+    display: grid;
+    width: min(21rem, calc(100vw - 2rem));
+    gap: 0.35rem;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background:
+      linear-gradient(135deg, rgba(4, 28, 52, 0.9), rgba(11, 72, 113, 0.68)),
+      rgba(4, 28, 52, 0.72);
+    box-shadow: 0 24px 70px rgba(3, 18, 31, 0.26);
+    backdrop-filter: blur(20px);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px) scale(0.98);
+    transform-origin: top right;
+    transition:
+      opacity 220ms ease,
+      transform 220ms ease;
+  }
+
+  .topbar.is-menu-open .nav-links {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+
+  .nav-item::after {
+    display: none;
+  }
+
+  .nav-trigger {
+    width: 100%;
+    justify-content: space-between;
+    min-height: 2.75rem;
+    padding: 0 0.75rem;
+    border-radius: 6px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .nav-menu {
+    position: static;
+    min-width: 0;
+    margin: 0.35rem 0 0.5rem;
+    padding: 0.35rem;
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: none;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  .nav-menu a {
+    padding: 0.65rem 0.7rem;
+  }
+
+  .language-switch {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 0.2rem;
+  }
+
+  .fixed-rail {
     display: none;
   }
 
@@ -1473,11 +1611,15 @@ address svg {
   }
 
   .showcase-card {
-    min-height: 22rem;
+    min-height: 17rem;
   }
 
   .service-card {
-    flex-basis: min(84vw, 28rem);
+    flex-basis: min(82vw, 23rem);
+  }
+
+  .service-card-media {
+    min-height: 17rem;
   }
 
   .footer {
@@ -1509,8 +1651,8 @@ address svg {
   }
 
   .hero {
-    min-height: 820px;
-    padding: 6.5rem 1rem 4rem;
+    min-height: 760px;
+    padding: 6rem 1rem 3.25rem;
   }
 
   .hero h1 {
@@ -1529,8 +1671,60 @@ address svg {
     grid-column: auto;
   }
 
+  .showcase-grid {
+    gap: 0.75rem;
+  }
+
   .showcase-card {
-    min-height: 19rem;
+    min-height: 14.5rem;
+  }
+
+  .showcase-card.tall,
+  .showcase-card.wide.tall {
+    min-height: 16rem;
+  }
+
+  .showcase-card div {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .showcase-card h3 {
+    margin-bottom: 0.28rem;
+    font-size: 1.05rem;
+  }
+
+  .showcase-card p {
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .service-slider {
+    width: calc(100vw - 1rem);
+    padding-top: 0.25rem;
+    mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  }
+
+  .service-track {
+    gap: 0.75rem;
+  }
+
+  .service-card {
+    flex-basis: min(78vw, 20rem);
+  }
+
+  .service-card-media {
+    min-height: 12.5rem;
+  }
+
+  .service-card h3 {
+    margin-top: 1rem;
+    font-size: 1.05rem;
+  }
+
+  .service-card p {
+    font-size: 0.92rem;
   }
 
   .pillars {
