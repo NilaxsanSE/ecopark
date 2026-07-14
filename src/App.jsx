@@ -190,8 +190,8 @@ const localizedContent = {
     showcaseItems,
     steps,
     hero: {
-      title: "WE INVEST IN",
-      accent: " THE FUTURE",
+      title: "WE INVEST",
+      accent: "IN THE FUTURE",
       text: "We support high-quality projects, always at the side of our customers and partners!",
     },
     intro: {
@@ -347,14 +347,14 @@ const localizedContent = {
       },
     ],
     hero: {
-      title: "WIR INVESTIEREN IN",
-      accent: " DIE ZUKUNFT",
+      title: "WIR INVESTIEREN",
+      accent: "IN DIE ZUKUNFT",
       text: "Wir unterstützen hochwertige Projekte und stehen unseren Kunden und Partnern jederzeit zur Seite!",
     },
     intro: {
       kicker: "Einen Schritt voraus",
       title: "Warum wir besser sind",
-      text: "Wir sind eine führende globale Investmentgesellschaft, die im Auftrag von Institutionen und Privatpersonen weltweit investiert. Unser Erfolg basiert auf unserer bewährten Investment- und operativen Expertise - und im Zentrum steht das ECO-PARK Managementsystem. Die Erkenntnisse aus unserer Größe, Expertise und globalen Reichweite ermöglichen jeder Gruppe innerhalb von ECO-PARK, vom Ganzen zu profitieren.",
+      text: "Wir sind eine führende globale Investmentgesellschaft, die weltweit im Auftrag von Institutionen und Privatpersonen investiert. Unser Erfolg gründet auf unserer bewährten Investment- und Managementexpertise – und das Herzstück unseres Handelns bildet das ECO-PARK-Managementsystem. Die wertvollen Erkenntnisse aus unserer globalen Größe und Erfahrung ermöglichen es jedem Bereich von ECO-PARK, direkt von unserer gemeinschaftlichen Stärke zu profitieren.",
     },
     showcaseHeading: {
       kicker: "Unternehmensprofil",
@@ -876,7 +876,16 @@ function App() {
         <section className="intro-section" id="company">
           <div>
             <span className="section-kicker">{t.intro.kicker}</span>
-            <h2>{t.intro.title}</h2>
+            <h2>
+              {activeLanguage === "DE" ? (
+                <>
+                  Warum wir
+                  <span>besser sind</span>
+                </>
+              ) : (
+                t.intro.title
+              )}
+            </h2>
           </div>
           <p>{t.intro.text}</p>
         </section>

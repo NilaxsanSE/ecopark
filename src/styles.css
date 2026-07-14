@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   color: #14211f;
   background: #f7f7f2;
   font-family:
@@ -401,7 +401,7 @@ textarea {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 780px;
+  max-width: 1120px;
   text-align: center;
 }
 
@@ -429,7 +429,7 @@ textarea {
 }
 
 .hero h1 {
-  max-width: 690px;
+  max-width: 1050px;
   margin-top: 1rem;
   color: #ffffff;
   font-size: clamp(2.8rem, 5.25vw, 6.15rem);
@@ -598,7 +598,7 @@ textarea {
 .approach-section,
 .governance-section,
 .contact-section {
-  width: min(1180px, calc(100% - 2rem));
+  width: min(1200px, calc(100% - 2rem));
   margin: 0 auto;
 }
 
@@ -640,6 +640,10 @@ textarea {
   margin-inline: auto;
   font-size: clamp(1.9rem, 2.8vw, 3rem);
   line-height: 1.08;
+}
+
+.intro-section h2 span {
+  display: block;
 }
 
 .intro-section p,
